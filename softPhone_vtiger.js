@@ -4,7 +4,7 @@ var sip_number;
 var sip_password;
 
 $.ajax({
-    url: "module.html",cache: false,success: function(html){
+    url: "softPhone.html",cache: false,success: function(html){
         $( "body" ).append( html );
         
         $.ajax({
