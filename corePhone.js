@@ -8,11 +8,11 @@ var state = "null";//null, unregistered, registered, calling, incoming, incall
 function createSipStack(){
     console.log("createSipStack 1");
     sipStack = new SIPml.Stack({
-            realm: '192.168.0.105',
-            impi: '103',
-            impu: 'sip:103@192.168.0.105',
-            password: '103pas',
-            websocket_proxy_url: 'ws://192.168.0.105:8088/ws',
+            realm: server_ip,
+            impi: sip_number,
+            impu: 'sip:' + sip_number + '@' + server_ip + '192.168.0.105',
+            password: sip_password,
+            websocket_proxy_url: 'ws://' + server_ip + ':' + server_port + '/ws',
             ice_servers: "[{ url: 'stun:stun.l.google.com:19302'}]",
             enable_rtcweb_breaker: false,
             events_listener: { events: '*', listener: onSipEventStack }, // optional: '*' means all events
